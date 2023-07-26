@@ -1,3 +1,212 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +215,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website Title</title>
     <style>
-       
+        @font-face {
+            font-family: 'Future'; /* Font family name */
+            src: url('Future.ttf') format('truetype'); /* Path to the TTF file */
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -16,108 +229,72 @@
             min-height: 100vh;
             align-items: center;
             justify-content: center;
-            background-color: #000; 
-            color: red; 
+            background-color: #000;
+            color: red;
         }
-        header {
-            background-color: green; 
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            border-radius: 10px; 
-        }
-       
-        @keyframes rainbow-text {
-            0% {
-                color: #f06;
-            }
-            25% {
-                color: #9f6;
-            }
-            50% {
-                color: #06f;
-            }
-            75% {
-                color: #f06;
-            }
-            100% {
-                color: #f06;
-            }
-        }
-        header h1 {
-            animation: rainbow-text 4s infinite;
-        }
-        nav {
-            background-color: green; 
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px; 
-        }
-        nav a {
-            color: red; 
-            text-decoration: none;
-            margin: 0 10px;
-            background-color: black; 
-            padding: 8px 12px;
-            border-radius: 10px; 
-            display: inline-block; 
-        }
+
         main {
             padding: 20px;
             text-align: center;
         }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
+
         #password-form {
             margin: 20px auto;
-            width: 300px;
+            width: 300px; /* Slightly longer form width */
             padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: green; 
-            color: #fff; 
+            border: none; /* Remove the border */
+            border-radius: 5px; /* Rounded edges */
+            background-color: green;
+            color: #fff;
+            box-shadow: 0 0 10px 5px #00ff00; /* Neon glowing effect */
         }
+
         #password {
             outline: none;
             border: none;
+            font-family: 'Future', Arial, sans-serif; /* Apply the 'Future' font */
+            border-radius: 5px; /* Rounded edges */
+            padding: 5px 10px; /* Original padding for the input box */
+            background-color: #00ff00; /* Neon color for the input box background */
+            color: #ff0066; /* Brighter neon red text color in the input box */
+            text-shadow: 0 0 10px #ff0066; /* Neon glowing effect for the text */
+            width: 80%; /* Make the input box take full width */
         }
+
         #password-form label {
-            color: red;
-        }
-        #password-form button {
-            color: red;
+            font-family: 'Future', Arial, sans-serif; /* Apply the 'Future' font */
+            color: #ff0000; /* Brighter red color for the "CD:" label */
+            margin-bottom: 40px; /* Adding even higher margin to move the label higher */
+            text-shadow: 0 0 10px red; /* Neon glowing effect for the label */
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Lost Society</h1>
-    </header>
     <main>
         <!-- Your main content goes here -->
-        <h2>Whats a good quote?</h2>
         <div id="password-form">
-            <label for="password">Enter a good quote:</label>
-            <input type="text" id="password" />
-            <button onclick="checkPassword()">Submit</button>
+            <label for="password">CD:</label>
+            <input type="text" id="password" onkeydown="handleKeyDown(event)" />
         </div>
     </main>
-        <script>
+    <script>
+        function handleKeyDown(event) {
+            if (event.keyCode === 13) {
+                checkPassword();
+            }
+        }
+
         function checkPassword() {
             var enteredPassword = document.getElementById('password').value;
-            var correctPassword = 'I am free and that is why i am lost'; 
+            var correctPassword = 'I am free and that is why I am lost';
             if (enteredPassword.toLowerCase() === correctPassword.toLowerCase()) {
-                window.location.href = 'https://lostsociet.github.io/Morse/Morse.html'; 
+                window.location.href = 'https://lostsociet.github.io/Morse/Morse.html';
             } else {
-                alert('Pick another quote.');
+                alert('CD.');
             }
         }
     </script>
 </body>
+
 </html>
