@@ -76,9 +76,9 @@
         }
 
         function checkPassword() {
-            var enteredPassword = document.getElementById('password').value;
-            var correctPassword = 'I am free and that is why I am lost';
-            if (enteredPassword.toLowerCase() === correctPassword.toLowerCase()) {
+            var enteredPassword = document.getElementById('password').value.toLowerCase();
+            var correctPassword = 'I am free and that is why I am lost'.toLowerCase();
+            if (enteredPassword === correctPassword) {
                 window.location.href = 'https://lostsociet.github.io/Morse/Morse.html';
             } else {
                 alert('CD.');
